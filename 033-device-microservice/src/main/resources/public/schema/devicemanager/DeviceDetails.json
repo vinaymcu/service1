@@ -1,0 +1,102 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"resultCode": {
+			"type": "string"
+		},
+		"resultDescription": {
+			"type": "string"
+		},
+		"executionTime": {
+			"type": "integer"
+		},
+		"resultObj": {
+			"type": "object",
+			"properties": {
+				"device": {
+					"type": "object",
+					"properties": {
+						"deviceId": {
+							"type": "string"
+						},
+						"serialNumber": {
+							"type": "string"
+						},
+						"ipAddress": {
+							"type": "string"
+						},
+						"extIPAddress": {
+							"type": "string"
+						},
+						"deviceName": {
+							"type": "string"
+						},
+						"softwareVersion": {
+							"type": "string"
+						},
+						"model": {
+							"type": "string"
+						},
+						"vendor": {
+							"type": "string"
+						},
+						"deviceType": {
+							"type": "string",
+							"maxLength": 30
+						},
+						"platform": {
+							"type": "string",
+							"maxLength": 30
+						},
+						"uiVersion": {
+							"type": "string"
+						},
+						"assignmentStatus": {
+							"type": "string"
+						},
+						"lastUpdateTime": {
+							"type": "string"
+						},
+						"lastUpdateUserName": {
+							"type": "string"
+						},
+						"overridingDefaults": {
+							"type": "integer"
+						},
+						"maxBandwidthUpdates": {
+							"type": "integer"
+						},
+						"tvQualityInterest": {
+							"type": "string"
+						},
+						"assignedProfile": {
+							"type": "string"
+						},
+						"drmId": {
+							"type": "string"
+						}
+					},
+					"additionalProperties": false,
+					"required": [
+						"deviceId",
+						"serialNumber",
+						"assignmentStatus",
+						"lastUpdateTime",
+						"lastUpdateUserName",
+						"overridingDefaults",
+						"drmId",
+						"deviceType",
+						"platform"
+					]
+				}
+			}
+		}
+	},
+	"required": [
+		"resultCode",
+		"resultDescription",
+		"executionTime"
+	],
+	"additionalProperties": false
+}

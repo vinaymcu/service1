@@ -1,0 +1,94 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"SubscriberDetails": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"AccountNumber": {
+						"type": "string",
+						"maxLength": 200
+					},
+					"Name": {
+						"type": "string",
+						"maxLength": 75
+					},
+					"SubscriberId": {
+						"type": "string",
+						"maxLength": 100
+					},
+					"City": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"Status": {
+						"type": "string",
+						"maxLength": 10
+					},
+					"LocationId": {
+						"type": "integer",
+						"minimum": 1,
+						"maximum": 999999999
+					},
+					"Type": {
+						"type": "string",
+						"maxLength": 20,
+						"description": "Region/location name of the subscriber."
+					},
+					"PhoneNumber": {
+						"type": "string",
+						"maxLength": 25,
+						"description": "Region/location name of the subscriber."
+					},
+					"SubscriberBWProfile": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"MaxBWOverride": {
+						"type": "integer",
+						"minimum": 1,
+						"maximum": 999999999
+					},
+					"MaxSTBsPerContentQuality": {
+						"$ref": "MaxSTBsPerContentQuality.json"
+					},
+					"QoeControlBandwidth": {
+						"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999999999
+					},
+					"RetEnable": {
+						"type": "boolean"
+					},
+					"RccEnable": {
+						"type": "boolean"
+					},
+					"NetworkBufferSize": {
+						"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999999999
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"SubscriberId",
+					"AccountNumber",
+					"Name",
+					"Status",					
+					"LocationId",
+					"SubscriberBWProfile",
+					"MaxSTBsPerContentQuality"
+				]
+			},
+			"minItems": 1
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"SubscriberDetails"
+	]
+}

@@ -1,0 +1,105 @@
+{
+	"type": "object",
+	"properties": [
+		{
+			"destination": {
+				"name": "Registration"
+			},
+			"mapping": {
+				"type": "object",
+				"properties": [
+					{
+						"origin": {
+							"path": "$.device.AccountNumber"
+						},
+						"destination": {
+							"name": "accountnumber"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.device.MasterPIN"
+						},
+						"destination": {
+							"name": "pinnumber"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.device.Password"
+						},
+						"destination": {
+							"name": "password"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.device.HardwareVersion"
+						},
+						"destination": {
+							"name": "hardwareversion"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.device.IPAddress"
+						},
+						"destination": {
+							"name": "ipaddress"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.device.MACAddress"
+						},
+						"destination": {
+							"name": "macaddress"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.device.SerialNumber"
+						},
+						"destination": {
+							"name": "serialnumber"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.device.SoftwareVersion"
+						},
+						"destination": {
+							"name": "softwareversion"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.extIpAddress"
+						},
+						"destination": {
+							"name": "externalipaddress"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.assignedConnectionMode"
+						},
+						"destination": {
+							"name": "devicemode"
+						}
+					},
+					{
+						"origin": {
+							"path": "$.device.SupportedModes"
+						},
+						"destination": {
+							"name": "devicemodecapable"
+						}
+					}
+				]
+			}
+		}
+	]
+}
+
+

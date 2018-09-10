@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
+	version="2.1">
+	
+	<named-query name="DEVICE.GET_DEVICE_BY_MACADDRESS">
+		<query>
+			SELECT DEV FROM Device DEV
+				WHERE DEV.deviceId = :macAddress
+		</query>
+	</named-query>
+	
+	<named-query name="DEVICE.GET_DEVICES_BY_EQUIPMENTIDLIST">
+		<query>
+			SELECT DEV FROM Device DEV
+				WHERE DEV.id IN :equipmentIdList
+		</query>
+	</named-query>
+
+	<named-query name="DEVICE.GET_DEVICE_BY_SERIALNUMBER">
+		<query>
+			SELECT DEV FROM Device DEV
+				WHERE DEV.serialNumber = :serialNumber
+		</query>
+	</named-query>
+
+	<named-query name="DEVICE.GET_DEVICE_BY_NAME">
+		<query>
+			SELECT DEV FROM Device DEV
+				WHERE DEV.deviceName = :deviceName
+		</query>
+	</named-query>
+	
+	<named-query name="SUBSCRIBER.GET_SUBSCRIBER_BY_ACCOUNTNUMBER">
+		<query>
+			SELECT SUB FROM Subscriber SUB
+				WHERE SUB.accountNumber =:accountNumber 
+		</query>
+	</named-query>
+
+	<named-query name="SUBSCRIBER_DEVICE.GET_SUBSCRIBER_DEVICELIMIT_BY_SUBSCRIBERID">
+		<query>
+			SELECT DEVICELIMIT FROM SubscriberDeviceLimit DEVICELIMIT
+				WHERE DEVICELIMIT.id.subscriberId = :subscriberId 
+		</query>
+	</named-query>
+
+	<named-query name="DEVICEAUDIT.FIND_SUBSCRIBER_ID_MAX_LAST_UPDATE_BY_START_END_DATE">
+		<query>
+			SELECT NEW com.accenture.avs.device.entity.DeviceAudit(DEVA.assignedToUsername as assignedToUsername, MAX(DEVA.lastUpdatedDatetime) as lastUpdatedDatetime) 
+                FROM DeviceAudit DEVA
+                WHERE DEVA.assignedToUsername IS NOT NULL
+                AND DEVA.lastUpdatedDatetime BETWEEN :startDate AND :endDate
+                GROUP BY DEVA.assignedToUsername
+		</query>
+	</named-query>
+	
+	<named-query name="RESOURCE.FIND_BY_NAME">
+		<query>
+			SELECT R FROM Resource R
+			WHERE R.id.name = :name
+		</query>
+	</named-query>
+	
+	<named-query name="RESOURCE.FIND_RESOURCES_BY_NAMELIST">
+		<query>
+			SELECT R FROM Resource R
+			WHERE R.id.name IN :nameList
+		</query>
+	</named-query>
+	
+	<named-query name="HMM.DELETE_HMM_BY_HARDWARE_NAME">
+		<query>
+			DELETE FROM HardwareMtpMapping HMM WHERE HMM.id.hardwareName = :hardwareName
+		</query>
+	</named-query>
+	
+	<named-query name="SHM.DELETE_SHM_BY_SERVICE_ID">
+		<query>
+			DELETE FROM ServiceHardwareMapping SHM WHERE SHM.id.serviceId = :serviceId
+		</query>
+	</named-query>
+	
+	<named-query name="DEVICE.GET_DEVICE_BY_MACADDRESS_AND_SUBSCRIBERID">
+		<query>
+			SELECT DEV FROM Device DEV
+				WHERE DEV.deviceId = :macAddress and DEV.assignedToUserName = :subscriberId
+		</query>
+	</named-query>
+
+</entity-mappings>

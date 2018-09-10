@@ -1,0 +1,82 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"STBDetails": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"EquipmentId": {
+						"type": "integer",
+						"minimum": 1,
+						"maximum": 999999999
+					},
+					"IPAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"STBName": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"SoftwareVersion": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"HardwareVersion": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"TVQualityInterest": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"UIVersion": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"OverridingDefaults": {
+						"type": "integer",
+						"minimum" : 0,
+						"maximum" : 1
+					},
+					"MaxBandwidthUpdates": {
+						"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999
+					},
+					"AssignedResources": {
+						"type": "array",
+						"items": {
+							"$ref": "AssignedResources.json"
+						}
+					},
+					"CASDeviceId": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"VMXClientId": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"SetTopBoxUDFs": {
+						"$ref": "SetTopBoxUDFs.json"
+					}
+				},
+				"additionalProperties": false,
+					"required": [
+						"EquipmentId"
+					]
+				
+			},
+			"minItems": 1
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"STBDetails"
+	]
+}

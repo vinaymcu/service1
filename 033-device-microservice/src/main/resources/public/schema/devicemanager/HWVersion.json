@@ -1,0 +1,37 @@
+{
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "array",
+      "items": {
+            "type": "object",
+            "javaInterfaces": [
+                  "java.io.Serializable"
+            ],
+            "properties": {
+                  "Name": {
+                        "type": "string",
+                        "maxLength": 20
+                  },
+                  "QoECapable": {
+                        "type": "boolean"
+                  },
+                  "DisableSTBAutoRegistration": {
+                        "type": "boolean"
+                  },
+                  "VideoTypeProfile": {
+                        "type": "array",
+                        "items": {
+                              "type": "string",
+							  "maxLength": 30
+                        }, 
+                        "minItems": 1
+                  }
+            },
+            "additionalProperties": false,
+            "required": [
+                  "Name",
+                  "QoECapable",
+                  "DisableSTBAutoRegistration",
+                  "VideoTypeProfile"
+            ]
+      }
+}

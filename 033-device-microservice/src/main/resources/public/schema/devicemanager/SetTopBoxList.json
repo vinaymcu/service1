@@ -1,0 +1,63 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"totalSTBs": {
+			"type": "integer"
+		},
+		"STBList": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"EquipmentId": {
+						"type": "integer"
+					},
+					"SerialNumber": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"CASDeviceId": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"SubscriberName": {
+						"type": "string",
+						"maxLength": 75
+					},
+					"SubscriberId": {
+						"type": "string",
+						"maxLength": 100
+					},
+					"MACAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"IPAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"AssignmentStatus": {
+						"type": "string",
+						"maxLength": 10
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"EquipmentId",
+					"SerialNumber",
+					"CASDeviceId",
+					"MACAddress",
+					"AssignmentStatus"
+				]
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"totalSTBs",
+		"STBList"
+	]
+}

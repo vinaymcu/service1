@@ -1,0 +1,94 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"additionalProperties": false,
+	"javaInterfaces": 
+	[
+		"java.io.Serializable"
+	],
+
+	"properties": 
+	{
+		"UpdateConfigurationData": 
+		{
+			"type": "object",
+			"additionalProperties": false,
+			"properties": 
+			{
+				"MDCBitrate": 
+				{
+					"type": "integer"
+				},
+
+				"UseGlobalQoEBW": 
+				{
+					"type": "boolean"
+				},
+
+				"VideoTypeList": 
+				{
+					"$ref": "ConfigurationData.json#/VideoTypeListDef"
+				},
+
+				"AvailableResolutionTypes": 
+				{
+					"$ref": "ConfigurationData.json#/AvailableResolutionTypesDef"
+				},
+
+				"HWList": 
+				{
+					"type": "array",
+					"additionalItems": false,
+					"items": 
+					{
+						"type": "object",
+						"additionalProperties": false,
+						"properties": 
+						{
+							"HWVersion": 
+							{
+								"type": "string",
+								"maxLength": 30
+							},
+
+							"QoECapable": 
+							{
+								"type": "boolean"
+							},
+
+							"HWVIDEOTYPENAMELIST": 
+							{
+								"type": "array",
+								"additionalItems": false,
+								"items": 
+								{
+									"type": "string",
+									"maxLength": 70
+								}
+							},
+
+							"required": 
+							[
+								"HWVersion",
+								"QoECapable",
+								"HWVIDEOTYPENAMELIST"
+							],
+
+							"additionalProperties": false
+						}
+					}
+				},
+
+				"BWProfileList": 
+				{
+					"$ref": "ConfigurationData.json#/BWProfileListDef"
+				}
+			}
+		},
+
+		"required": 
+		[
+			"UpdateConfigurationData"
+		]
+	}
+}

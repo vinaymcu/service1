@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>
+			Description: Schema file for notification for STB Assignment to Operator's CRM. 
+		</xs:documentation>
+	</xs:annotation>
+	
+	<xs:complexType name="T_Registration">
+		<xs:sequence>
+			<xs:element name="accountnumber" type="xs:string"/>
+			<xs:element name="pinnumber" type="xs:string" minOccurs="0"/>
+			<xs:element name="password" type="xs:string" minOccurs="0"/>
+			<xs:element name="hardwareversion" type="xs:string"/>
+			<xs:element name="ipaddress" type="xs:string"/>
+			<xs:element name="macaddress" type="xs:string"/>
+			<xs:element name="serialnumber" type="xs:string"/>
+			<xs:element name="softwareversion" type="xs:string"/>
+			<xs:element name="externalipaddress" type="xs:string"/>
+			<xs:element name="devicemode" type="xs:string"/>
+			<xs:element name="devicemodecapable" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="DeviceRegistration">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Registration" type="T_Registration"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

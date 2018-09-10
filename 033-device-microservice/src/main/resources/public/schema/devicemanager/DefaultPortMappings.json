@@ -1,0 +1,52 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "array",
+	"items": {
+		"type": "object",
+		"javaInterfaces": ["java.io.Serializable"],
+		"properties": {
+			"ServiceName": {
+				"type": "string",
+				"maxLength": 50
+			},
+			"DefaultInternalPort": {
+				"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999999
+			},
+			"DefaultExternalPort": {
+				"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999999
+			},
+			"Protocol": {
+				"type": "string",
+				"maxLength": 10
+			},
+			"STBHWVersions": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"AllHardwares": {
+						"type": "boolean"
+					},
+					"STBHWVersion": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"ServiceName",
+			"DefaultInternalPort",
+			"DefaultExternalPort",
+			"Protocol"
+		]
+	},
+	"additionalProperties": false
+}

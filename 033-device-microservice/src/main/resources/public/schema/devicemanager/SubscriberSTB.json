@@ -1,0 +1,175 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": [
+		"java.io.Serializable"
+	],
+	"properties": {
+		"SubSTBDetailList": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": [
+					"java.io.Serializable"
+				],
+				"properties": {
+					"EquipmentId": {
+						"type": "integer"
+					},
+					"SerialNumber": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"MACAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"IPAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"ExtIPAddress": {	
+						"type": "string",
+						"maxLength": 20
+					},
+					"STBName": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"SoftwareVersion": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"HardwareVersion": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"UIVersion": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"LastUpdateTime": {
+						"type": "string",
+						"maxLength": 13
+					},
+					"LastUpdateUserName": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"LocationId": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"OverridingDefaults": {
+						"type": "integer"
+					},
+					"MaxBandwidthUpdates": {
+						"type": "integer"
+					},
+					"AssignedConnectionMode": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"SupportedConnectionModes": {
+						"type": "string",
+						"maxLength": 40
+					},
+					"TVQualityInterest": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"Profile": {
+						"type": "object",
+						"javaInterfaces": ["java.io.Serializable"],
+						"properties": {
+							"Name": {
+								"type": "string",
+								"maxLength": 20
+							},
+							"NetworkBandwidth": {
+								"type": "integer"
+							},
+							"AssignedVQEOverheadBW": {
+								"type": "integer"
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"Name",
+							"NetworkBandwidth",
+							"AssignedVQEOverheadBW"
+						]
+					},
+					"GenericSTBSettings": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"javaInterfaces": ["java.io.Serializable"],
+							"properties": {
+								"purpose": {
+									"type": "string",
+									"maxLength": 200
+								},
+								"Name": {
+									"type": "string",
+									"maxLength": 30
+								},
+								"Value": {
+									"type": "string",
+									"maxLength": 200
+								}
+							},
+							"additionalProperties": false,
+							"required": [
+								"purpose",
+								"Name",
+								"Value"
+							]
+						},
+						"additionalProperties": false
+					},
+					"AssignedResources": {
+						"type": "array",
+						"items": {
+							"$ref": "AssignedResources.json"
+						}
+					},
+					"CASDeviceId": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"VMXClientId": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"PortMapping": {
+						"type": "array",
+						"items": {
+							"$ref": "PortMapping.json"
+						}
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"EquipmentId",
+					"SerialNumber",
+					"MACAddress",
+					"STBName",
+					"HardwareVersion",
+					"LastUpdateTime",
+					"LastUpdateUserId",
+					"Location",
+					"AssignedConnectionMode",
+					"SupportedConnectionModes",
+					"TVQualityInterest",
+					"Profile",
+					"CASDeviceId"
+				]
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"SubSTBDetailList"
+	]
+}

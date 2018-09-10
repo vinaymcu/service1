@@ -1,0 +1,31 @@
+{
+	"type": "array",
+	"items": {
+		"type": "object",
+		"javaInterfaces": ["java.io.Serializable"],
+		"properties": {
+			"Type": {
+				"type": "string",
+				"maxLength": 10
+			},
+			"Display Name": {
+				"type": "string",
+				"maxLength": 30
+			},
+			"AvailableForUI": {
+				"type": "boolean"
+			},
+			"AvailableForAudio": {
+				"type": "boolean"
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"Type",
+			"Display Name",
+			"AvailableForUI",
+			"AvailableForAudio"
+		]
+	},
+	"additionalProperties": false
+}

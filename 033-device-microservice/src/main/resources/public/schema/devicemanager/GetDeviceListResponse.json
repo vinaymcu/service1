@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resultCode": {
+      "type": "string"
+    },
+    "resultDescription": {
+      "type": "string"
+    },
+    "executionTime": {
+      "type": "integer"
+    },
+    "resultObj": {
+      "type": "object",
+      "properties": {
+        "totalResults": {
+          "type": "integer"
+        },
+        "deviceList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "deviceId": {
+                "type": "integer"
+              },
+              "serialNumber": {
+                "type": "string",
+                "maxLength": 50
+              },
+              "drmId": {
+                "type": "string",
+                "maxLength": 30
+              },
+              "userName": {
+                "type": "string",
+                "maxLength": 100
+              },
+              "ipAddress": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "assignmentStatus": {
+                "type": "string",
+                "maxLength": 10
+              },
+              "model": {
+                "type": "string",
+                "maxLength": 20
+              },
+              "vendor": {
+                "type": "string",
+                "maxLength": 20
+              },
+			  "deviceType": {
+		  		"type": "string",
+		  		"maxLength": 30
+			  },
+			  "platform": {
+		  		"type": "string",
+		  		"maxLength": 30
+			  },
+              "softwareVersion": {
+                "type": "string",
+                "maxLength": 20
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "deviceId",
+              "assignmentStatus",
+	      "deviceType",
+	      "platform"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "resultCode",
+    "resultDescription",
+    "executionTime"
+  ]
+}

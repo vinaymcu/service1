@@ -1,0 +1,36 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"GlobalData": {
+			"type": "object",
+			"javaInterfaces": ["java.io.Serializable"],
+			"properties": {
+				"Languages": {
+					"$ref": "Languages.json"
+				},
+				"Locations": {
+					"$ref": "Locations.json"
+				},
+				"ConnectionModes": {
+					"$ref": "ConnectionModes.json"
+				},
+				"DefaultPortMappings": {
+					"$ref": "DefaultPortMappings.json"
+				},
+				"GlobalQoESettings": {
+					"$ref": "GlobalQoESettings.json"
+				},
+				"HWVersion": {
+					"$ref": "HWVersion.json"
+				}
+			},
+			"additionalProperties": false
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"GlobalData"
+	]
+}

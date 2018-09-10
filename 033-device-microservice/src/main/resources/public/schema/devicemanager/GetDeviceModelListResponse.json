@@ -1,0 +1,121 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"resultCode": {
+			"type": "string"
+		},
+		"resultDescription": {
+			"type": "string"
+		},
+		"executionTime": {
+			"type": "integer"
+		},
+		"resultObj": {
+			"type": "object",
+			"properties": {
+				"totalResults": {
+					"type": "integer"
+				},
+				"deviceModelList": {
+					"type": "array",
+					"description": "List of device models",
+					"items": {
+						"type": "object",
+						"properties": {
+							"deviceModel": {
+								"type": "string"
+							},
+							"vendor": {
+								"type": "string"
+							},
+							"platform": {
+								"type": "string"
+							},
+							"osName": {
+								"type": "string"
+							},
+							"osVersion": {
+								"type": "string"
+							},
+							"swId": {
+								"type": "string"
+							},
+							"qoeCapable": {
+								"type": "boolean"
+							},
+							"uiVersion": {
+								"type": "string"
+							},
+							"sdChannelTimeshiftBuffer": {
+								"type": "integer"
+							},
+							"hdChannelTimeshiftBuffer": {
+								"type": "integer"
+							},
+							"status": {
+								"type": "integer"
+							},
+							"vqeProfile": {
+								"type": "string"
+							},
+							"deviceAutoRegistration": {
+								"type": "boolean"
+							},
+							"lastUpdateUserName": {
+								"type": "string"
+							},
+							"lastUpdatedInterface": {
+								"type": "string"
+							},
+							"maxStreamsPerQuality": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"contentQuality": {
+											"type": "string"
+										},
+										"streamLimit": {
+											"type": "integer"
+										}
+									},
+									"required": [
+										"contentQuality",
+										"streamLimit"
+									]
+								}
+							}
+						},
+						"required": [
+							"deviceModel",
+							"vendor",
+							"platform",
+							"swId",
+							"qoeCapable",
+							"uiVersion",
+							"sdChannelTimeshiftBuffer",
+							"hdChannelTimeshiftBuffer",
+							"status",
+							"vqeProfile",
+							"deviceAutoRegistration",
+							"lastUpdatedInterface",
+							"maxStreamsPerQuality",
+							"lastUpdateUserName",
+							"lastUpdatedInterface"
+						]
+					}
+				}
+			},
+			"required": [
+				"totalResults",
+				"deviceModelList"
+			]
+		}
+	},
+	"required": [
+		"resultCode",
+		"resultDescription",
+		"executionTime"
+	]
+}

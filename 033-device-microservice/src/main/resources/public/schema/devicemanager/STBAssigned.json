@@ -1,0 +1,52 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": [
+		"java.io.Serializable"
+	],
+	"properties": {
+		"resultCode": {
+			"type": "string"
+		},
+		"resultDescription": {
+			"type": "string"
+		},
+		"executionTime": {
+			"type": "integer"
+		},
+		"resultObj": {
+			"type": "object",
+			"properties": {
+				"STBAssigned": {
+					"type": "object",
+					"properties": {
+						"AccountNumber": {
+							"type": "string",
+							"maxLength": 200
+						},
+						"MACAddress": {
+							"type": "string",
+							"maxLength": 20
+						},
+						"EquipmentId": {
+							"type": "integer"
+						}
+					},
+			"required": [
+				"AccountNumber",
+				"MACAddress",
+				"EquipmentId"
+			]
+				}
+			},
+			"required": [
+				"STBAssigned"
+			]
+		}
+	},
+	"required": [
+		"resultCode",
+		"resultDescription",
+		"executionTime"
+	]
+}

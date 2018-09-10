@@ -1,0 +1,163 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": [
+		"java.io.Serializable"
+	],
+	"properties": {
+		"resultCode": {
+			"type": "string"
+		},
+		"resultDescription": {
+			"type": "string"
+		},
+		"executionTime": {
+			"type": "integer"
+		},
+		"resultObj": {
+			"type": "object",
+			"properties": {
+				"totalResults": {
+					"type": "integer"
+				},
+				"STBDetailList": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"javaInterfaces": [
+							"java.io.Serializable"
+						],
+						"properties": {
+							"equipmentId": {
+								"type": "string"
+							},
+							"serialNumber": {
+								"type": "string"
+							},
+							"MACAddress": {
+								"type": "string"
+							},
+							"IPAddress": {
+								"type": "string"
+							},
+							"extIPAddress": {
+								"type": "string"
+							},
+							"STBName": {
+								"type": "string"
+							},
+							"softwareVersion": {
+								"type": "string"
+							},
+							"hardwareVersion": {
+								"type": "string"
+							},
+							"UIVersion": {
+								"type": "string"
+							},
+							"assignmentStatus": {
+								"type": "string"
+							},
+							"lastUpdateTime": {
+								"type": "string"
+							},
+							"lastUpdateUserName": {
+								"type": "string"
+							},
+							"locationId": {
+								"type": "string"
+							},
+							"overridingDefaults": {
+								"type": "string"
+							},
+							"maxBandwidthUpdates": {
+								"type": "string"
+							},
+							"TVQualityInterest": {
+								"type": "string"
+							},
+							"hardwareType": {
+								"type": "string"
+							},
+							"assignedConnectionMode": {
+								"type": "string"
+							},
+							"supportedConnectionModes": {
+								"type": "string"
+							},
+							"assignedProfile": {
+								"type": "string"
+							},
+							"assignedResources": {
+								"type": "array",
+								"items": {
+									"$ref": "AssignedResources.json"
+								}
+							},
+							"CASDeviceId": {
+								"type": "string"
+							},
+							"VMXClientId": {
+								"type": "string"
+							},
+							"portMappings": {
+								"type": "array",
+								"items": {
+									"$ref": "PortMapping.json"
+								}
+							}
+						},
+						"additionalProperties": false,
+						"required": [
+							"resultCode",
+							"resultDescription",
+							"equipmentId",
+							"serialNumber",
+							"MACAddress",
+							"assignmentStatus",
+							"lastUpdateTime",
+							"lastUpdateUserId",
+							"location",
+							"overridingDefaults",
+							"assignedConnectionMode",
+							"supportedConnectionModes",
+							"CASDeviceId",
+							"VMXClientId"
+						]
+					}
+				},
+				"Error": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"javaInterfaces": [
+							"java.io.Serializable"
+						],
+						"properties": {
+							"macAddress": {
+								"type": "string"
+							},
+							"resultCode": {
+								"type": "string"
+							},
+							"resultDescription": {
+								"type": "string"
+							}
+						},
+						"required": [
+							"macAddress",
+							"resultCode",
+							"resultDescription"
+						]
+					}
+				}
+			}
+		}
+	},
+	"required": [
+		"resultCode",
+		"resultDescription",
+		"executionTime"
+	],
+	"additionalProperties": false
+}

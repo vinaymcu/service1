@@ -1,0 +1,30 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "array",
+	"javaInterfaces": [
+		"java.io.Serializable"
+	],
+	"items": {
+		"type": "object",
+		"javaInterfaces": [
+			"java.io.Serializable"
+		],
+		"properties": {
+			"Name": {
+				"enum": [
+					"Bridged",
+					"Implicit NAT",
+					"UPnP NAPT"
+				]
+			},
+			"Status": {
+				"enum": [
+					"Enabled",
+					"Disabled"
+				]
+			}
+		},
+		"additionalProperties": false
+	},
+	"additionalProperties": false
+}

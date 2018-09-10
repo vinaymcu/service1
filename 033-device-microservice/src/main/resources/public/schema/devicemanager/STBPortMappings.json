@@ -1,0 +1,45 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"IPAddress": {
+			"type": "string",
+			"maxLength": 20
+		}, 
+		"STBPortMappings": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"ServiceType": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"ExternalPort": {
+						"type": "integer",
+						"minimum": 1,
+						"maximum": 999999
+					},
+					"InternalPort": {
+						"type": "integer",
+						"minimum": 1,
+						"maximum": 999999
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"ServiceType",
+					"ExternalPort",
+					"InternalPort"
+				]
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"IPAddress",
+		"STBPortMappings"
+	]
+}

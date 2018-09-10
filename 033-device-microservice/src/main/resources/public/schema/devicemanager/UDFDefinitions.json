@@ -1,0 +1,45 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"UDFDefinitions": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"FieldName": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"Description": {
+						"type": "string",
+						"maxLength": 256
+					},
+					"EnumValues": {
+						"type": "string",
+						"maxLength": 1024
+					},
+					"DefaultValue": {
+						"type": "string",
+						"maxLength": 255
+					},
+					"Rule": {
+						"$ref": "Rule.json"
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"FieldName",
+					"Rule"
+				]
+			},
+			"minItems": 1
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"UDFDefinitions"
+	]
+}

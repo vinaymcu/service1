@@ -1,0 +1,50 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"resultCode": {
+			"type": "String",
+			"description": "It will be valorized  in case of generic Error, that is in case the MS will not able to execute the requested interface, for example in case of the DataBase is down(ACN_300) or in case all entities in the request (or the single entity in case the request is not for list of entities) are successfully executed (ACN_200). In the other case it will be not present."
+		},
+		"resultDescription": {
+			"type": "String",
+			"description": "Description Error. Example:  300-GENERIC ERROR.  In the other case it will be not present."
+		},
+		"resultObject": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {					
+					"resultCode": {
+					    "type": "String",
+					    "description": "ACN_200 in case of success response, ACN_XXXX in case of error"					    
+		            },
+					"resultDescription": {
+						"type": "String",
+						"description": "OK if resultCode is ACN_200, otherwise it will be the description of the error."
+					},
+					"id": {
+						"type": "string",
+						"description": "Id of the entity processed  in the request. For e.g. it will be MAC Address in case of STB, account number in case of subscriber etc."
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"id",
+					"resultDescription",
+					"resultCode"
+				]
+			}
+		},
+		"systemTime": {
+			"type": "Integer",
+			"description": "GM Time in Milliseconds"
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"systemTime"
+	]
+}

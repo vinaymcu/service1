@@ -1,0 +1,40 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"HWList": {
+			"type": "object",
+			"javaInterfaces": ["java.io.Serializable"],
+			"properties": {
+				"Name": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"Name"
+			]
+		},
+		"AvaliableResources": {
+			"type": "object",
+			"javaInterfaces": ["java.io.Serializable"],
+			"properties": {
+				"Name": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": [
+				"Name"
+			]
+		}
+	},
+	"additionalProperties": false
+}

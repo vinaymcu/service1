@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+	<Appenders>
+
+		<Console name="ConsoleAppender" target="SYSTEM_OUT">
+			<PatternLayout>
+				<Pattern>%d [%t] %-5p [%c{1.}] - %m%n</Pattern>
+			</PatternLayout>
+		</Console>
+
+	</Appenders>
+
+
+	<Loggers>
+		<logger name="org.springframework" additivity="false" level="info">
+			<appender-ref ref="ConsoleAppender" />
+		</logger>
+
+		<Root>
+			<appender-ref ref="ConsoleAppender" />
+		</Root>
+
+	</Loggers>
+</Configuration>
+
+
+

@@ -1,0 +1,57 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": [
+		"java.io.Serializable"
+	],
+	"properties": {
+		"resultCode": {
+			"type": "string"
+		},
+		"resultDescription": {
+			"type": "string"
+		},
+		"executionTime": {
+			"type": "integer"
+		},
+		"resultObj": {
+			"type": "object",
+			"properties": {
+				"totalResults": {
+					"type": "integer"
+				},
+				"UpdatedAccounts": {
+					"type": "array",
+					"description": "List of subscribers updated within a time frame",
+					"required": false,
+					"items": {
+						"type": "object",
+						"javaInterfaces": [
+							"java.io.Serializable"
+						],
+						"required": false,
+						"properties": {
+							"AccountNumber": {
+								"type": "string",
+								"maxLength": 200,
+								"description": "Account Number of the subscriber whose STB was updated within the given time frame",
+								"required": true
+							},
+							"LastModified": {
+								"type": "string",
+								"maxLength": 50,
+								"description": "The last modification date when the subscriber's STB was updated.",
+								"required": true
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"required": [
+		"resultCode",
+		"resultDescription",
+		"executionTime"
+	]
+}

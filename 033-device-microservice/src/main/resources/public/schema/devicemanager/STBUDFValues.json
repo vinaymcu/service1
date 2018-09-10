@@ -1,0 +1,14 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"SetTopBoxUDFs": {
+			"$ref": "SetTopBoxUDFs.json"
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"SetTopBoxUDFs"
+	]
+}

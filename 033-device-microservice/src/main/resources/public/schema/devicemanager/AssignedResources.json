@@ -1,0 +1,20 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "type": "object",
+   "javaInterfaces": ["java.io.Serializable"],
+   "properties": {
+      "name": {
+         "type": "string",
+	 "maxLength": 20
+      },
+      "allocation": {
+         "type": "string",
+	 "maxLength": 20
+      }
+   },
+   "additionalProperties": false,
+   "required": [
+      "name",
+      "allocation"
+   ]
+}

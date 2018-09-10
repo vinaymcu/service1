@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resultCode": {
+      "type": "string"
+    },
+    "resultDescription": {
+      "type": "string"
+    },
+    "resultObj": {
+      "properties": {
+        "totalResults": {
+          "type": "integer",
+          "description": ""
+        },
+        "deviceLogs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "deviceId": {
+                "type": "string"
+              },
+              "serialNumber": {
+                "type": "string"
+              },
+              "ipAddress": {
+                "type": "string"
+              },
+              "extIPAddress": {
+                "type": "string"
+              },
+              "deviceName": {
+                "type": "string"
+              },
+              "softwareVersion": {
+                "type": "string"
+              },
+              "model": {
+                "type": "string"
+              },
+              "vendor": {
+                "type": "string"
+              },
+		"deviceType": {
+		  "type": "string",
+		  "maxLength": 30
+		},
+		"platform": {
+		  "type": "string",
+		  "maxLength": 30
+		},
+              "uiVersion": {
+                "type": "string"
+              },
+              "assignmentStatus": {
+                "type": "string"
+              },
+              "userName": {
+                "type": "string"
+              },
+              "lastUpdateTime": {
+                "type": "string"
+              },
+              "lastUpdateUserName": {
+                "type": "string"
+              },
+              "overridingDefaults": {
+                "type": "string"
+              },
+              "maxBandwidthUpdates": {
+                "type": "string"
+              },
+              "tvQualityInterest": {
+                "type": "string"
+              },
+              "assignedProfile": {
+                "type": "string"
+              },
+              "drmId": {
+                "type": "string"
+              },
+              "operation": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false,
+            "required": [
+              "deviceId",              
+              "assignmentStatus",
+              "lastUpdateTime",
+              "lastUpdateUserName",              
+              "drmId",
+	      "deviceType",
+	      "platform",
+	      "operation"
+            ]
+          }
+        }
+      },
+      "required": [
+        "totalResults",
+        "deviceLogs"
+      ]
+    },
+    "executionTime": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "resultCode",
+    "resultDescription",
+    "executionTime"
+  ]
+}

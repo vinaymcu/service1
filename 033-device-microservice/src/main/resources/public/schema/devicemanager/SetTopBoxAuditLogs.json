@@ -1,0 +1,115 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "type": "object",
+   "javaInterfaces": ["java.io.Serializable"],
+   "properties": {
+      "STBUpdateLogs": {
+         "type": "array",
+         "items": {
+            "type": "object",
+             "javaInterfaces": ["java.io.Serializable"],
+            "properties": {
+               "Action": {
+                  "type": "string",
+		  "maxLength": 10
+               },               
+               "EquipmentId": {
+                  "type": "integer"
+               },
+               "SerialNumber": {
+                  "type": "string",
+		  "maxLength": 50
+               },
+               "MACAddress": {
+                  "type": "string",
+		  "maxLength": 20
+               },
+               "IPAddress": {
+                  "type": "string",
+		  "maxLength": 20
+               },
+               "ExtIPAddress": {
+                  "type": "string",
+		  "maxLength": 20
+               },
+               "STBName": {
+                  "type": "string",
+		  "maxLength": 30
+               },
+               "SoftwareVersion": {
+                  "type": "string",
+		  "maxLength": 50
+               },
+               "HardwareVersion": {
+                  "type": "string",
+		  "maxLength": 30
+               },
+               "UIVersion": {
+                  "type": "string",
+		  "maxLength": 50
+               },
+               "AssignmentStatus": {
+                  "type": "string",
+		  "maxLength": 10
+               },
+               "LastUpdateTime": {
+                  "type": "string",
+		  "maxLength": 10
+               },
+               "LastUpdateUserName": {
+                  "type": "string",
+		  "maxLength": 30
+               },
+               "LocationId": {
+                  "type": "string",
+		  "maxLength": 20
+               },
+               "OverridingDefaults": {
+                  "type": "integer"
+               },
+               "MaxBandwidthUpdates": {
+                  "type": "integer"
+               },
+               "TVQualityInterest": {
+                  "type": "string",
+		  		"maxLength": 20
+               },               
+               "AssignedConnectionMode": {
+                  "type": "string",
+		  "maxLength": 20
+               },
+               "SupportedConnectionModes": {
+                  "type": "string",
+		  "maxLength": 40
+               },
+            "AssignedToSubscriber": {
+                  "type": "string",
+		  "maxLength": 20
+               },
+               "CASDeviceId": {
+                  "type": "string",
+		  "maxLength": 30
+               },
+               "VMXClientId": {
+                  "type": "string",
+		  "maxLength": 30
+               }
+            },
+             "additionalProperties": false,
+            "required": [
+               "Action",               
+               "EquipmentId",
+               "SerialNumber",
+               "MACAddress",
+               "AssignmentStatus",
+               "LastUpdateTime",
+               "LastUpdateUserId"           
+            ]
+         }
+      }
+   },
+   "additionalProperties": false,
+   "required": [
+      "STBUpdateLogs"
+   ]
+}

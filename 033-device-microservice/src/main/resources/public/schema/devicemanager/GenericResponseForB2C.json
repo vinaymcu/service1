@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"resultCode": {
+			"type": "String",
+			"description": "KO/OK property to specify if the operation is a success or a failure. If the operation is partially successful, even then this field will be marked as KO."
+		},
+		"errorDescription": {
+			"type": "String",
+			"description": "Error Code. Example Example:  ACN_3000"
+		},
+		"message": {
+			"type": "String",
+			"description": "Error Message.Example:  3000-Missing Parameter"
+		},
+		"resultObject": {
+			"type": "Object",
+			"description": "object returned in case of ok response"
+		},
+		"systemTime": {
+			"type": "Integer",
+			"description": "GM Time in Milliseconds"
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"resultCode",		
+		"systemTime"		
+	]
+}

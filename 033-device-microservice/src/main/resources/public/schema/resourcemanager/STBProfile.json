@@ -1,0 +1,120 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"additionalItems": false,
+	"javaInterfaces": [
+		"java.io.Serializable"
+	],
+	"properties": {
+		"resultCode": {
+			"type": "string",
+			"description": "It will be valorized only in case of generic Error, that is only in case the MS will not able to execute the requested interface , for example in case of the DataBase is down( ACN_300). See CreateSTB_errorResponse on attachment. In the other case it will be not present."
+		},
+		"resultDescription": {
+			"type": "string",
+			"description": "Description Error. Example:  300-GENERIC ERROR.  See CreateSTB_errorResponse on attachment. In the other case it will be not present."
+		},
+		"resultObject": {
+			"type": "array",
+			"additionalItems": false,
+			"items": {
+				"type": "object",
+				"properties": {
+					"resultCode": {
+						"type": "string",
+						"description": "OK if resultDescription is ACN_200, KO otherwise"
+					},
+					"resultDescription": {
+						"type": "string",
+						"description": "ACN_200 in case of success response, ACN_XXXX in case of error"
+					},
+					"id": {
+						"type": "string",
+						"description": "Id of the entity processed  in the request. For e.g. it will be MAC Address in case of STB, account number in case of subscriber etc."
+					},
+					"ResSubscriber": {
+						"type": "object",
+						"properties": {
+							"Id": {
+								"type": [
+									"string",
+									"integer"
+								],
+								"pattern": "^[1-9][0-9]*$"
+							},
+							"freeBW": {
+								"type": "integer"
+							},
+							"AssignedDeviceProfile": {
+								"type": "array",
+								"additionalItems": false,
+								"items": {
+									"type": "object",
+									"properties": {
+										"EquipmentID": {
+											"type": "string",
+											"maxLength": 20
+										},
+										"AssignedProfile": {
+											"type": "string",
+											"maxLength": 30
+										},
+										"AssignedBW": {
+											"type": "integer"
+										},
+										"AssignedVQEOverheadBW": {
+											"type": "integer"
+										},
+										"TVQualityProfile": {
+											"type": "array",
+											"additionalItems": false,
+											"items": {
+												"type": "object",
+												"properties": {
+													"TvQualityInterest": {
+														"type": "string",
+														"maxLength": 10
+													},
+													"TvQualityMaxBW": {
+														"type": "integer"
+													}
+												},
+												"required": [
+													"TvQualityInterest",
+													"TvQualityMaxBW"
+												],
+												"additionalProperties": false
+											}
+										}
+									},
+									"required": [
+										"EquipmentID",
+										"AssignedBW",
+										"AssignedVQEOverheadBW",
+										"TVQualityProfile"
+									],
+									"additionalProperties": false
+								}
+							}
+						},
+						"required": [
+							"Id",
+							"freeBW",
+							"AssignedDeviceProfile"
+						],
+						"additionalProperties": false
+					}
+				}
+			},
+			"required": [
+				"id",
+				"resultDescription",
+				"resultCode"
+			]
+		},
+		"systemTime": {
+			"type": "string",
+			"description": "GM Time in Milliseconds"
+		}
+	}
+}

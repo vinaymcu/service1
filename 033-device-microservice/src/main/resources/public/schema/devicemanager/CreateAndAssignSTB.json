@@ -1,0 +1,78 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"AssignSTBs": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": ["java.io.Serializable"],
+				"properties": {
+					"AccountNumber": {
+						"type": "string",
+						"maxLength": 200
+					},					
+					"MACAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"SerialNumber": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"IPAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"ExtIPAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"SupportedConnectionModes": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"HardwareVersion": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"CASDeviceId": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"SoftwareVersion": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"UIVersion": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"STBName": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"VMXClientId": {
+						"type": "string",
+						"maxLength": 30
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"AccountNumber",
+					"MACAddress",
+					"SerialNumber",
+					"IPAddress",
+					"ExtIPAddress",
+					"SupportedConnectionModes",
+					"HardwareVersion"
+				]
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"AssignSTBs"
+	]
+}

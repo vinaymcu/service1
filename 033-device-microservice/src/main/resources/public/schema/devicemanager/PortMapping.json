@@ -1,0 +1,25 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"serviceName": {
+			"type": "string",
+			"maxLength": 20
+		},
+		"externalPort": {
+			"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999999
+		},
+		"internalPort": {
+			"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999999
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"portMapping"
+	]
+}

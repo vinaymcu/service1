@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="60">
+	<Appenders>
+
+		<!--START APPENDER SYNC FOR APPLICATION -->
+		<RollingFile name="Application"
+			fileName="/product/jboss/standalone/log/devicemanager-ms.log"
+			filePattern="/product/jboss/standalone/log/devicemanager-ms_%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<Pattern>ts: %d{yyyy-MM-dd HH:mm:ss,SSS} | logLevel: %-5level | appId: %X{appId} | thread: (%t) | SID: %X{SID} | TN: %X{TN} | clientIp: %X{clientIp} | username: %X{user} | apiType: %X{apiType} | api: %X{api} | platform: %X{platform} | %m%n</Pattern>
+			</PatternLayout>
+			<TimeBasedTriggeringPolicy />
+		</RollingFile>
+
+		<Async name="ApplicationAsync" blocking="false" bufferSize="50000">
+			<AppenderRef ref="Application" />
+		</Async>
+		<!--END APPENDER SYNC FOR APPLICATION -->
+
+
+
+		<!-- START APPENDER Logstash --> 
+		<Socket name="LogstashSocketAppender" host="AVS_LOGSTASH_SERVICE"
+			port="4748" immediateFail="false" immediateFlush="false"
+			reconnectionDelayMillis="30000" connectTimeoutMillis="5000" >
+			<PatternLayout>
+				<Pattern>ts: %d{yyyy-MM-dd HH:mm:ss,SSS} | logLevel: %-5level | appId: %X{appId} | thread: (%t) | SID: %X{SID} | TN: %X{TN} | clientIp: %X{clientIp} | username: %X{user} | apiType: %X{apiType} | api: %X{api} | platform: %X{platform} | %m%n</Pattern>
+			</PatternLayout>
+        </Socket>
+		
+		<Async name="LogstashAsyncAppender" blocking="false"
+			bufferSize="50000">
+			<AppenderRef ref="LogstashSocketAppender" />
+		</Async>
+		<!-- END APPENDER Logstash -->
+
+	</Appenders>
+
+	<Loggers>
+
+		<Logger name="com.accenture.avs" level="info" additivity="false">
+			<AppenderRef ref="ApplicationAsync" />
+			<AppenderRef ref="LogstashAsyncAppender" />
+		</Logger>
+
+		<Root level="info">
+			<appender-ref ref="ApplicationAsync" />
+		</Root>
+	</Loggers>
+</Configuration>
+	
+		
+		
+		
+		

@@ -1,0 +1,33 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": [
+		"java.io.Serializable"
+	],
+	"properties": {
+		"STBDeletions": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": [
+					"java.io.Serializable"
+				],
+				"properties": {
+					"IdType": {
+						"enum": [
+							"MACAddress",
+							"EquipmentId",
+							"ExtIPAddress"
+						]
+					},
+					"Value": {
+						"type": "string"
+					}
+				},
+				"additionalProperties": false
+			},
+			"minItems": 1
+		}
+	},
+	"additionalProperties": false
+}

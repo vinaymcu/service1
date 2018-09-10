@@ -1,0 +1,19 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"DeleteUDFs": {
+			"type": "array",
+			"items": {
+				"type": "string",
+				"maxLength": 30
+			},
+			"minItems": 1
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"DeleteUDFs"
+	]
+}

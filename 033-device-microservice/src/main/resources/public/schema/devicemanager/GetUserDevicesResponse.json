@@ -1,0 +1,192 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "resultCode": {
+      "type": "string"
+    },
+    "resultDescription": {
+      "type": "string"
+    },
+    "executionTime": {
+      "type": "integer"
+    },
+    "resultObj": {
+      "type": "object",
+      "properties": {
+        "totalResults": {
+          "type": "integer"
+        },
+        "userDevicesList": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "devices": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "deviceId": {
+                      "type": "string"
+                    },
+                    "serialNumber": {
+                      "type": "string",
+                      "maxLength": 20
+                    },
+                    "ipAddress": {
+                      "type": "string",
+                      "maxLength": 20
+                    },
+                    "extIPAddress": {
+                      "type": "string",
+                      "maxLength": 20
+                    },
+                    "deviceName": {
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "softwareVersion": {
+                      "type": "string",
+                      "maxLength": 50
+                    },
+                    "model": {
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "vendor": {
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "deviceType": {
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "platform": {
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "uiVersion": {
+                      "type": "string",
+                      "maxLength": 50
+                    },                    
+                    "assignmentStatus": {
+                      "type": "string",
+                      "maxLength": 10
+                    },
+                    "lastUpdateTime": {
+                      "type": "string",
+                      "maxLength": 13
+                    },
+                    "lastUpdateUserName": {
+                      "type": "string",
+                      "maxLength": 30
+                    },
+                    "overridingDefaults": {
+                      "type": "integer"
+                    },
+                    "maxBandwidthUpdates": {
+                      "type": "integer"
+                    },
+                    "tvQualityInterest": {
+                      "type": "string",
+                      "maxLength": 20
+                    },                    
+                    "uiLanguage": {
+                      "type": "string",
+                      "maxLength": 20
+                    },
+                    "audioLanguage": {
+                      "type": "string",
+                      "maxLength": 20
+                    },                  
+                    "hdCapable": {
+                      "type": "boolean"
+                    },
+                    "profile": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string",
+                          "maxLength": 20
+                        },
+                        "networkBandwidth": {
+                          "type": "integer"
+                        },
+                        "assignedVQEOverheadBW": {
+                          "type": "integer"
+                        }
+                      },
+                      "additionalProperties": false,
+                      "required": [
+                        "name",
+                        "networkBandwidth",
+                        "assignedVQEOverheadBW"
+                      ]
+                    },
+                    "genericDeviceSettings": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "purpose": {
+                            "type": "string",
+                            "maxLength": 200
+                          },
+                          "name": {
+                            "type": "string",
+                            "maxLength": 30
+                          },
+                          "value": {
+                            "type": "string",
+                            "maxLength": 200
+                          }
+                        },
+                        "additionalProperties": false,
+                        "required": [
+                          "purpose",
+                          "name",
+                          "value"
+                        ]
+                      },
+                      "additionalProperties": false
+                    },
+                    "drmId": {
+                      "type": "string",
+                      "maxLength": 30
+                    }
+                  },
+                  "additionalProperties": false,
+                  "required": [
+                  	"deviceId",
+                    "deviceName",
+                    "lastUpdateTime",
+                    "lastUpdateUserId",
+                    "profile",
+                    "drmId",
+                    "deviceType",
+                    "platform"
+                  ]
+                }
+              },
+              "userName": {
+                "type": "string",
+                "maxLength": 100
+              }
+            },
+            "required": [
+              "devices",
+              "userName"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "resultCode",
+    "resultDescription",
+    "executionTime"
+  ]
+}

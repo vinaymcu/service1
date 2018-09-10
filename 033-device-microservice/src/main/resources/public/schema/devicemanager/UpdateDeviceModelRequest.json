@@ -1,0 +1,83 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"properties": {
+		"deviceModel": {
+			"type": "string",
+			"minLength": 1,
+			"maxLength": 20
+		},
+		"vendor": {
+			"type": "string",
+			"maxLength": 20
+		},
+		"platform": {
+			"type": "string",
+			"maxLength": 20
+		},
+		"osName": {
+			"type": "string",
+			"maxLength": 20
+		},
+		"osVersion": {
+			"type": "string",
+			"maxLength": 20
+		},
+		"swId": {
+			"type": "string",
+			"maxLength": 20
+		},
+		"qoeCapable": {
+			"type": "boolean"
+		},
+		"uiVersion": {
+			"type": "string",
+			"maxLength": 20
+		},
+		"sdChannelTimeshiftBuffer": {
+			"type": "integer"
+		},
+		"hdChannelTimeshiftBuffer": {
+			"type": "integer"
+		},
+		"status": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 1
+		},
+		"vqeProfile": {
+			"type": "string",
+			"maxLength": 20
+		},
+		"tstvBufferSize": {
+			"type": "integer"
+		},
+		"hdCapable": {
+			"type": "boolean"
+		},
+		"deviceAutoRegistration": {
+			"type": "boolean"
+		},
+		"maxStreamsPerQuality": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"contentQuality": {
+						"type": "string"
+					},
+					"streamLimit": {
+						"type": "integer"
+					}
+				},
+				"required": [
+					"contentQuality",
+					"streamLimit"
+				]
+			}
+		}
+	},
+	"required": [
+		"deviceModel"
+	]
+}

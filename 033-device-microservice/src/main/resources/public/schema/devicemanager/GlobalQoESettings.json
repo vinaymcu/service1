@@ -1,0 +1,22 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": ["java.io.Serializable"],
+	"properties": {
+		"QoeRCCEnableDefault": {
+			"type": "boolean"
+		},
+		"QoeRETEnableDefault": {
+			"type": "boolean"
+		},		
+		"AllowRCCOverSubscription": {
+			"type": "boolean"
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"QoeRCCEnableDefault",
+		"QoeRETEnableDefault",		
+		"AllowRCCOverSubscription"
+	]
+}

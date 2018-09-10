@@ -1,0 +1,24 @@
+{	
+	"type": "array",
+	"items": {
+		"type": "object",
+		"javaInterfaces": ["java.io.Serializable"],
+		"properties": {
+			"ContentQuality": {
+				"type": "string",
+				"maxLength": 10
+			},
+			"STBLimit": {
+				"type": "integer",
+						"minimum" : 1,
+						"maximum" : 99
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"ContentQuality",
+			"STBLimit"
+		]
+	},
+	"additionalProperties": false
+}

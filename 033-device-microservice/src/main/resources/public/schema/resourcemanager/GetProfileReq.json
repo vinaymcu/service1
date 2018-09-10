@@ -1,0 +1,94 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "additionalItems": false,
+  "javaInterfaces": [
+    "java.io.Serializable"
+  ],
+  "properties": {
+    "Subscriber": {
+      "type": "object",
+      "additionalItems": false,
+      "properties": {
+        "BWProfile": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 50
+        },
+        "MaxDeviceProfile": {
+          "type": "array",
+          "additionalItems": false,
+          "items": {
+            "type": "object",
+            "properties": {
+              "TvQuality": {
+                "type": "string",
+                "maxLength": 10
+              },
+              "TvQualityMaxDevice": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "TvQuality",
+              "TvQualityMaxDevice"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "VqEBW": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "OverrideBW": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "AssignedDevices": {
+          "type": "array",
+          "additionalItems": false,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "EquipmentID": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 20
+              },
+              "HWVersion": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 30
+              },
+              "TvQualityInterest": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 10
+              },
+              "AssigmentDateTime": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 50
+              }
+            },
+            "required": [
+              "EquipmentID",
+              "HWVersion",              
+              "AssigmentDateTime"
+            ]
+          }
+        }
+      },
+      "required": [
+        "BWProfile",
+        "MaxDeviceProfile",
+        "AssignedDevices"
+      ]
+    }
+  },
+  "required": [
+    "Subscriber"
+  ]
+}

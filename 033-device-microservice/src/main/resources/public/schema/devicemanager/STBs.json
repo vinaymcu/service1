@@ -1,0 +1,81 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"javaInterfaces": [
+		"java.io.Serializable"
+	],
+	"properties": {
+		"SetTopBoxes": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"javaInterfaces": [
+					"java.io.Serializable"
+				],
+				"properties": {
+					"SerialNumber": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"MACAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"IPAddress": {
+						"type": "string",
+						"maxLength": 20
+					},
+					"SoftwareVersion": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"HardwareVersion": {
+						"type": "string",					
+						"maxLength": 30
+					},
+					"UIVersion": {
+						"type": "string",
+						"maxLength": 50
+					},
+					"OverridingDefaults": {
+						"type": "integer",
+						"minimum": 0,
+						"maximum": 1
+					},
+					"MaxBandwidthUpdates": {
+						"type": "integer",
+						"minimum": 0,
+						"maximum": 100
+					},
+					"AssignedResources": {
+						"type": "array",
+						"items": {
+							"$ref": "AssignedResources.json"
+						}
+					},
+					"CASDeviceId": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"VMXClientId": {
+						"type": "string",
+						"maxLength": 30
+					},
+					"SetTopBoxUDFs": {
+						"$ref": "SetTopBoxUDFs.json"
+					}
+				},
+				"additionalProperties": false,
+				"required": [
+					"SerialNumber",
+					"MACAddress",
+					"HardwareVersion"
+				]
+			}
+		}
+	},
+	"additionalProperties": false,
+	"required": [
+		"SetTopBoxes"
+	]
+}

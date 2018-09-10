@@ -1,0 +1,38 @@
+{
+	"type": "array",
+	"items": {
+		"type": "object",
+		"javaInterfaces": [
+			"java.io.Serializable"
+		],
+		"properties": {
+			"ID": {
+				"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999999999
+			},
+			"ParentID": {
+				"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999999999
+			},
+			"Name": {
+				"type": "string",
+				"maxLength": 30
+			},
+			"TVRegionID": {
+				"type": "integer",
+						"minimum" : 1,
+						"maximum" : 999999999
+			}
+		},
+		"additionalProperties": false,
+		"required": [
+			"ID",
+			"ParentID",
+			"Name",
+			"TVRegionID"
+		]
+	},
+	"additionalProperties": false
+}

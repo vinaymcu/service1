@@ -1,0 +1,33 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "type": "object",
+   "javaInterfaces": ["java.io.Serializable"],
+   "properties": {
+      "Properties": {
+         "type": "array",
+         "items": {
+            "type": "object",
+            "javaInterfaces": ["java.io.Serializable"],
+            "properties": {
+               "Name": {
+                  "type": "string",
+		  "maxLength": 20
+               },
+               "Value": {
+                  "type": "string",
+		  "maxLength": 200
+               }
+            },
+            "additionalProperties": false,
+            "required": [
+               "Name",
+               "Value"
+            ]
+         }
+      }
+   },
+   "additionalProperties": false,
+   	"required": [
+		"Properties"
+	]
+}
